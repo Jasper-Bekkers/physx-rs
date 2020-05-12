@@ -233,6 +233,10 @@ fn add_common(ctx: &mut Context) {
     let root = &ctx.root;
     builder.cpp(true);
 
+    if ccenv.target_os == "android" {
+        builder.define("ANDROID", None);
+    }
+
     // These includes are used by pretty much everything so just add them first
     ctx.includes.push(shared_root.join("include"));
     ctx.includes.extend(

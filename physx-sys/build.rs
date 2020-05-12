@@ -148,6 +148,9 @@ fn main() {
             "x86_64-apple-darwin" | "x86_64-pc-windows-msvc" => {
                 include.push(target);
             }
+            "aarch64-linux-android" => {
+                include.push(target);
+            }
             nix if nix.starts_with("x86_64-unknown-linux") => {
                 include.push("x86_64-unknown-linux");
             }
